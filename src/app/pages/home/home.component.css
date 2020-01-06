@@ -1,0 +1,41 @@
+.list-of-movies .card {
+  margin-bottom: 20px;
+}
+
+.list-pagination {
+  margin-top: 20px;
+}
+
+.page-item {
+  cursor: pointer;
+}
+
+p.desc {
+  height: 70px;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.genres {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 70%;
+  text-align: right;
+}
+
+.search-form input:active, .search-form input:focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.list-of-movies {
+  position: relative;
+}
+
+.card-img-top {
+  height: 150px;
+}

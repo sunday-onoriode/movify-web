@@ -1,0 +1,22 @@
+.movie-player {
+  border: solid 1px #ddd;
+  height: 400px;
+}
+
+.movie-player img {
+  height: 100%;
+  width: 100%;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+}
+
+.details-list li {
+  padding: 3px 0;
+}
+
+.storyline {
+  margin-top: 30px;
+}

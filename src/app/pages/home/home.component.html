@@ -1,0 +1,73 @@
+<div class="page-header">
+  <div class="container">
+    <h4 class="page-title">List of Movies</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/movies">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">List</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="search-form">
+          <input class="form-control-plaintext" type="text" placeholder="Search..." name="search" (keyup)="search()" [(ngModel)]="dataRequest.filter">
+        </div>
+      </div>
+      <div class="col-md-4 offset-2">
+        <div class="sort">
+          <div class="form-group row">
+            <label for="staticSort" class="col-sm-2 col-form-label">Sorting: </label>
+            <div class="col-sm-10">
+              <select class="form-control" id="staticSort" [(ngModel)]="dataRequest.sortField" (change)="sort(dataRequest.sortField)">
+                <option value="id">Recently added</option>
+                <option value="releaseDate">Recently released</option>
+                <option value="title_">A-Z</option>
+                <option value="title">Z-A</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-of-movies">
+      <div class="loader" id="loader"><img src="/assets/images/loading.gif"></div>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let data of moviesData.data">
+          <div class="card">
+            <img src="/assets/images/placeholder-image.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title title">{{ data.title }}</h3>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <span>{{ data.voteAverage }} / 10</span>
+                <span class="float-right genres">{{ utils.listArrayValues(data.genres) }}</span>
+              </h6>
+              <p class="card-text desc">{{ substr(data.tagline, 100) }}</p>
+              <a routerLink="/movies/{{ data.slug }}" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-pagination">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item  {{ (dataRequest.offset == 0) ? 'disabled' : '' }}">
+            <a class="page-link" aria-label="Previous" (click)="paginate('previous')">
+              <span aria-hidden="true">&laquo; Previous</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" aria-label="Next" (click)="paginate('next')">
+              <span aria-hidden="true">Next &raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

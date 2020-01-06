@@ -1,0 +1,56 @@
+<div class="page-header">
+  <div class="container">
+    <h4 class="page-title">{{ movie.title }}</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/movies">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/movies">List</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Movie</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="movie-player">
+          <img src="/assets/images/placeholder-image.png">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h4>{{ movie.title }}</h4>
+        <h6 class="text-muted">
+          <span>{{ movie.runtime }} Minutes | </span>
+          <span>{{ utility.listArrayValues(movie.genres) }} | </span>
+          <span>{{ movie.releaseDate | date:'MMM dd, yyyy' }}</span>
+        </h6>
+        <h6 class="text-muted">Rating: {{ movie.voteAverage }} / 10</h6>
+        <div class="card" style="margin-top: 20px">
+          <div class="card-body">
+            <h5 class="card-title">Details</h5>
+            <ul class="details-list">
+              <li>Release date: <span class="text-muted">{{ movie.releaseDate | date:'MMM dd, yyyy' }}</span></li>
+              <li>Director: <span class="text-muted"></span></li>
+              <li>Imdb Rating: <span class="text-muted">{{ movie.voteAverage }} / 10</span></li>
+              <li>Country: <span class="text-muted">{{ utility.listArrayValues(movie.countries) }}</span></li>
+              <li>Language: <span class="text-muted">{{ utility.listArrayValues(movie.languages) }}</span></li>
+              <li>Production Co: <span class="text-muted">{{ utility.listArrayValues(movie.companies) }}</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="storyline">
+          <h5>Storyline</h5>
+          <p class="text-muted">
+            {{ movie.overview }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

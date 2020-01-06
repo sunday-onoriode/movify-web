@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin-top: 56px;
+}
+
+
+.auth-form-container {
+  margin-top: 130px;
+}
+
+.page-header {
+  border-bottom: solid 1px #ddd;
+  background-color: #e9ecef;
+}
+
+.page-header .page-title {
+  padding: 20px 0 0px;
+}
+
+.page-header .breadcrumb {
+  padding: 0;
+}
+
+.page-content {
+  margin-top: 30px;
+}
+
+.has-feedback .smk-error-msg {
+  right: 20px;
+  color: #dc3545;
+}
+
+.required-field:after {
+  content: " *";
+  color: #dc3545;
+  position: inherit;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: #ffffffbd;
+  text-align: center;
+  display: none;
+}
+
+.welcome-note {
+  margin-top: 140px;
+}
+
+.welcome-note h3 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.welcome-note .big-brand {
+  display: block;
+  font-size: 160px;
+}
+
+
+@media only screen and (max-width : 480px) {
+  .welcome-note {
+    margin-top: 20px;
+  }
+
+  .welcome-note h3 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .welcome-note .big-brand {
+    display: block;
+    font-size: 100px;
+  }
+
+  .auth-form-container {
+    margin-top: 20px;
+  }
+
+}

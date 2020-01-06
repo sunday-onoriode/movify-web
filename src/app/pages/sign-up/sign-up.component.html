@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="welcome-note">
+          <h3>Welcome to <span class="big-brand">Movify</span></h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card auth-form-container">
+          <h5 class="card-header">
+            Sign Up
+          </h5>
+          <div class="card-body">
+            <form id="form-sign-up">
+              <div class="form-group">
+                <label for="fullname" class="required-field">Full name</label>
+                <input type="text" class="form-control" id="fullname" [(ngModel)]="signUpRequest.fullName" name="fullName" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="required-field">Email address</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="signUpRequest.email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="password" class="required-field">Password</label>
+                <input type="password" class="form-control" id="password" [(ngModel)]="signUpRequest.password" name="password" required>
+              </div>
+              <button type="button" class="btn btn-primary" id="btn-sign-up" (click)="signUp()">Submit</button>
+            </form>
+          </div>
+          <div class="card-footer text-muted">
+            Have an account? <a routerLink="/sign-in">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
